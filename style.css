@@ -30,3 +30,25 @@ button.add-pizza:visited {
 button.add-pizza:hover {
     outline: none;
 }
+
+.pizza-list {
+    list-style: none;
+}
+
+.pizza {
+    background: url(pizza.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin: 20px;
+    position: relative;
+}
+
+.remove-pizza {
+    position: absolute;
+    color: red;
+    top: 5px;
+    right: 5px;
+}
