@@ -42,7 +42,6 @@ $(function () {
                 controller.addPizza();
             });
 
-
             // Grab element html
             this.$pizzaList = $('.pizza-list');
             this.pizzaTemplate = $('script[data-template="pizza"]').html();

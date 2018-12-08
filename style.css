@@ -51,4 +51,8 @@ button.add-pizza:hover {
     color: red;
     top: 5px;
     right: 5px;
+    padding: 2px 5px;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-decoration: none;
 }
