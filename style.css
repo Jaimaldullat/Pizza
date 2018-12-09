@@ -31,6 +31,17 @@ button.add-pizza:hover {
     outline: none;
 }
 
+.search-pizza {
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+}
+
+.search-pizza:focus {
+    outline: none;
+}
+
 .pizza-list {
     list-style: none;
 }

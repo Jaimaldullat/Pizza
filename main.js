@@ -22,12 +22,13 @@ $(function () {
             view.render();
         },
         // Get all the visible Pizzas
-        getVisiblePizzas: () => {
+        getVisiblePizzas: (input) => {
             var visiblePizzas = data.pizzas.filter((pizza) => {
-                return pizza.visible;
+                return (pizza.visible && ~pizza.id.toString().indexOf(input));
             });
             return visiblePizzas;
         },
+
         // Initialize
         init: () => {
             view.init();
@@ -42,6 +43,10 @@ $(function () {
                 controller.addPizza();
             });
 
+            this.searchPizza = $('.search-pizza');
+            searchPizza.on('keyup', (e) => {
+                view.render();
+            })
             // Grab element html
             this.$pizzaList = $('.pizza-list');
             this.pizzaTemplate = $('script[data-template="pizza"]').html();
@@ -56,10 +61,11 @@ $(function () {
         render: () => {
             var $pizzaList = this.$pizzaList;
             pizzaTemplate = this.pizzaTemplate;
+            var searchValue = this.searchPizza.val();
 
             $pizzaList.html('');
 
-            controller.getVisiblePizzas().forEach((pizza) => {
+            controller.getVisiblePizzas(searchValue).forEach((pizza) => {
 
                 var thisTemplate = pizzaTemplate.replace(/{{id}}/g, pizza.id);
                 $pizzaList.append(thisTemplate);
